@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>פאנל חישוב כדאיות</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .positive-result { color: green; }
+    .negative-result { color: red; }
+  </style>
+</head>
+<body dir="rtl">
+  <div class="container mt-5">
+    <h2>פאנל חישוב כדאיות לפרויקט מלונאי</h2>
+    <div class="form-group">
+      <label>עלות קרקע לוילה:</label>
+      <input type="number" id="landCost" class="form-control" value="500000">
+    </div>
+    <div class="form-group">
+      <label>עלות בנייה למ"ר (מינימום):</label>
+      <input type="number" id="minBuildCost" class="form-control" value="8000">
+    </div>
+    <div class="form-group">
+      <label>עלות בנייה למ"ר (מקסימום):</label>
+      <input type="number" id="maxBuildCost" class="form-control" value="15000">
+    </div>
+    <div class="form-group">
+      <label>תפוסה ממוצעת (%):</label>
+      <input type="number" id="occupancyRate" class="form-control" value="40">
+    </div>
+    <div class="form-group">
+      <label>הכנסה ממוצעת ללילה:</label>
+      <input type="number" id="avgIncomePerNight" class="form-control" value="3500">
+    </div>
+    <button class="btn btn-primary" onclick="calculateFeasibility()">חשב כדאיות</button>
+
+    <div class="mt-4">
+      <h4>תוצאות:</h4>
+      <p id="result" class="positive-result"></p>
+      <canvas id="feasibilityChart"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
